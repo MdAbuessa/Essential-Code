@@ -28,7 +28,7 @@ class _ProgressPercentIndecatorState extends State<ProgressPercentIndecator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Pull to Refresh')),
+      appBar: AppBar(title: const Text('Progress Indecator')),
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: _refresh,

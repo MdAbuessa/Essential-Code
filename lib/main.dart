@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:media_query/cardPage.dart';
+import 'package:media_query/container_color_change.dart';
 import 'package:media_query/container_inkwell.dart';
-import 'package:media_query/progress_percent_indecator.dart';
-import 'package:percent_indicator/percent_indicator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: RegForm());
+    return MaterialApp(home: RegForm(), debugShowCheckedModeBanner: false);
   }
 }
 
@@ -201,26 +199,17 @@ class _RegFormState extends State<RegForm> {
                 child: Text('Container InkWell page'),
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Cardpage()),
-                  );
-                },
-                child: Text('Card page'),
-              ),
-              SizedBox(height: 20),
+
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProgressPercentIndecator(),
+                      builder: (context) => ContainerColorChange(),
                     ),
                   );
                 },
-                child: Text('Progress_Indecator'),
+                child: Text('Prograss abnd card page'),
               ),
             ],
           ),
