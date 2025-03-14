@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:media_query/catagory_show.dart';
+import 'package:media_query/checkbox.dart';
 import 'package:media_query/container_color_change.dart';
 import 'package:media_query/container_inkwell.dart';
 import 'package:media_query/form_data_show.dart';
@@ -202,6 +203,7 @@ class _RegFormState extends State<RegForm> {
                   ],
                 ),
               ),
+
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -234,6 +236,19 @@ class _RegFormState extends State<RegForm> {
                   );
                 },
                 child: Text('Catagory Show Page'),
+              ),
+              SizedBox(height: 20),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MultiSelect(items: []),
+                    ),
+                  );
+                },
+                child: Text('Check  Box'),
               ),
             ],
           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:media_query/models/category_model.dart';
 
 class CatagoryShow extends StatefulWidget {
@@ -18,6 +17,7 @@ class _CatagoryShowState extends State<CatagoryShow> {
 
   @override
   void initState() {
+    super.initState();
     _getCategories();
   }
 
@@ -35,37 +35,57 @@ class _CatagoryShowState extends State<CatagoryShow> {
         children: [
           Padding(padding: const EdgeInsets.all(20.0), child: Text('Category')),
           SizedBox(height: 10),
-          Container(
-            height: 120,
+          category_section(),
+        ],
+      ),
+    );
+  }
 
-            child: ListView.separated(
-              itemCount: categories.length,
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.only(left: 20, right: 20),
-              separatorBuilder: (context, index) => SizedBox(width: 25),
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 100,
+  // ignore: non_constant_identifier_names
+  SizedBox category_section() {
+    return SizedBox(
+      height: 120,
+      child: ListView.separated(
+        itemCount: categories.length,
+        scrollDirection: Axis.horizontal,
+        padding: EdgeInsets.only(left: 20, right: 20),
+        separatorBuilder: (context, index) => SizedBox(width: 25),
+        itemBuilder: (context, index) {
+          return Container(
+            width: 100,
+            decoration: BoxDecoration(
+              color: categories[index].boxColor.withOpacity(0.6),
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
                   decoration: BoxDecoration(
-                    color: categories[index].boxColor.withOpacity(0.6),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      CircleAvatar(
-                        radius: 35, // Half of 50 (width/height)
-                        backgroundColor: Colors.white,
-                        backgroundImage: AssetImage(categories[index].iconPath),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(40),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.red,
+                        spreadRadius: 3,
+                        blurRadius: 10,
                       ),
-                      Text(categories[index].name),
                     ],
                   ),
-                );
-              },
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: CircleAvatar(
+                      radius: 20, // Half of 50 (width/height)
+
+                      backgroundImage: AssetImage(categories[index].iconPath),
+                    ),
+                  ),
+                ),
+                Text(categories[index].name),
+              ],
             ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
