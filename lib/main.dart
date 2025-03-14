@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:media_query/catagory_show.dart';
 import 'package:media_query/container_color_change.dart';
 import 'package:media_query/container_inkwell.dart';
+import 'package:media_query/form_data_show.dart';
 
 void main() {
   runApp(const MyApp());
@@ -176,10 +178,21 @@ class _RegFormState extends State<RegForm> {
                     ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          setState(() {
-                            _userData =
-                                "Name : ${_nameController.text}\nEmail:  ${_emailController.text}\nPhone Number : ${_phoneController.text}";
-                          });
+                          // setState(() {
+                          //   _userData =
+                          //       "Name : ${_nameController.text}\nEmail:  ${_emailController.text}\nPhone Number : ${_phoneController.text}";
+                          // });
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => FormDataShow(
+                                    name: _nameController.text,
+                                    email: _emailController.text,
+                                    phone: _phoneController.text,
+                                  ),
+                            ),
+                          );
                         }
                       },
                       child: Text('Register'),
@@ -210,6 +223,17 @@ class _RegFormState extends State<RegForm> {
                   );
                 },
                 child: Text('Prograss abnd card page'),
+              ),
+              SizedBox(height: 20),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CatagoryShow()),
+                  );
+                },
+                child: Text('Catagory Show Page'),
               ),
             ],
           ),
