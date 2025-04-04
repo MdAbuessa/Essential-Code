@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:media_query/catagory_show.dart';
+import 'package:media_query/chart_screen.dart';
 import 'package:media_query/checkbox.dart';
 import 'package:media_query/container_color_change.dart';
 import 'package:media_query/container_inkwell.dart';
@@ -249,6 +250,17 @@ class _RegFormState extends State<RegForm> {
                   );
                 },
                 child: Text('Check  Box'),
+              ),
+              SizedBox(height: 20),
+
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BarChartSample4()),
+                  );
+                },
+                child: Text('Chart Page'),
               ),
             ],
           ),

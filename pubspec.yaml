@@ -37,6 +37,7 @@ dependencies:
   percent_indicator: ^4.2.4
   
   flutter_svg: ^2.0.17
+  fl_chart: ^0.70.2
   
 
 dev_dependencies:
