@@ -2,18 +2,18 @@ import 'package:fl_chart/fl_chart.dart';
 
 import 'package:flutter/material.dart';
 
-class BarChartSample4 extends StatefulWidget {
-  BarChartSample4({super.key});
+class ChartFlScreen extends StatefulWidget {
+  ChartFlScreen({super.key});
 
   final Color dark = Colors.black;
   final Color normal = Colors.green;
   final Color light = Colors.red;
 
   @override
-  State<StatefulWidget> createState() => BarChartSample4State();
+  State<StatefulWidget> createState() => ChartFlScreenState();
 }
 
-class BarChartSample4State extends State<BarChartSample4> {
+class ChartFlScreenState extends State<ChartFlScreen> {
   Widget bottomTitles(double value, TitleMeta meta) {
     TextStyle style = TextStyle(
       color: Colors.green,
@@ -59,7 +59,7 @@ class BarChartSample4State extends State<BarChartSample4> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.purple,
+      color: Colors.lightGreen,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
 
       child: Column(

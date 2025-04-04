@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:media_query/catagory_show.dart';
-import 'package:media_query/chart_screen.dart';
+import 'package:media_query/chart_fl_screen.dart';
+import 'package:media_query/chart_syncfusion_screen.dart';
 import 'package:media_query/checkbox.dart';
 import 'package:media_query/container_color_change.dart';
 import 'package:media_query/container_inkwell.dart';
@@ -257,10 +258,22 @@ class _RegFormState extends State<RegForm> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => BarChartSample4()),
+                    MaterialPageRoute(builder: (context) => ChartFlScreen()),
                   );
                 },
-                child: Text('Chart Page'),
+                child: Text('FL Chart Page'),
+              ),
+              SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChartSyncfusionScreen(),
+                    ),
+                  );
+                },
+                child: Text('Syncfusion Chart Page'),
               ),
             ],
           ),
